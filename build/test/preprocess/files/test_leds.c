@@ -178,7 +178,7 @@ void test_QueryLedState_On(void)
 
    Leds_TurnOn(4);
 
-   aux = Leds_GetState(4);
+   aux = Leds_isOn(4);
 
    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((1)), (UNITY_INT)(UNITY_INT8 )((aux)), (
 
@@ -200,7 +200,7 @@ void test_QueryLedState_Off(void)
 
    Leds_TurnOff(4);
 
-   aux = Leds_GetState(4);
+   aux = Leds_isOn(4);
 
    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT8 )((0)), (UNITY_INT)(UNITY_INT8 )((aux)), (
 
@@ -242,16 +242,12 @@ void test_CheckLimits(void)
 
    uint8_t aux;
 
-   aux = Leds_GetState(17);
+   aux = Leds_isOn(17);
 
    UnityAssertEqualNumber((UNITY_INT)(UNITY_INT16)((0)), (UNITY_INT)(UNITY_INT16)((ledsVirtuales)), (
 
   ((void *)0)
 
   ), (UNITY_UINT)(99), UNITY_DISPLAY_STYLE_HEX16);
-
-
-
-
 
 }

@@ -43,7 +43,7 @@ void Leds_TurnAllOff(void)
     Leds_HardwareUpdate();
 }
 
-uint8_t Leds_GetState(int led)
+bool Leds_isOn(int led)
 {
     uint16_t aux;
     aux = (estado & Leds_ConvertirNumeroEnBit(led));

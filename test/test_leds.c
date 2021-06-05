@@ -65,22 +65,22 @@ void test_TurnAllOff(void)
    TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);   
 }
 
-void test_QueryLedState_On(void)
+void test_QueryLedisOn(void)
 {
    uint8_t aux;
    Leds_TurnOn(7);
    Leds_TurnOn(2);
    Leds_TurnOn(4);
-   aux = Leds_GetState(4);
+   aux = Leds_isOn(4);
    TEST_ASSERT_EQUAL_HEX8(LED_ON, aux);
 }
 
-void test_QueryLedState_Off(void)
+void test_QueryLedisOff(void)
 {
    uint8_t aux;
    Leds_TurnAllOn();
    Leds_TurnOff(4);
-   aux = Leds_GetState(4);
+   aux = Leds_isOn(4);
    TEST_ASSERT_EQUAL_HEX8(LED_OFF, aux);
 }
 
@@ -95,6 +95,6 @@ void test_CheckLimits(void)
    TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);
 
    uint8_t aux;
-   aux = Leds_GetState(17);
+   aux = Leds_isOn(17);
    TEST_ASSERT_EQUAL_HEX16(0, ledsVirtuales);
 }
